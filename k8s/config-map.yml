@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shopping-config-map
+data:
+  DBNAME: "shopping"
+  HOST: "postgres-srv"
+  USER: "admin"
+  PASSWORD: "mamram"
