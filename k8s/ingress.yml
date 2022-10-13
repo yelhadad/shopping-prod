@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-    - host: dev.shopping.io
+    - host: www.shoppinglistapp.info
       http:
         paths:
           - path: /api/?(.*)
@@ -24,7 +24,7 @@ spec:
                 name: client-srv
                 port:
                   number: 3000
-    - host: pgadmin.shopping.io
+    - host: pgadmin.shoppinglistapp.info
       http:
         paths:
           - path: /?(.*)
