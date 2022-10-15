@@ -24,6 +24,10 @@ spec:
       labels:
         app: postgres
     spec:
+      volumes:
+        - name: postgres-data
+          persistentVolumeClaim:
+            claimName: shopping-nfs-pvc
       containers:
         - name: postgres
           image: postgres
@@ -41,6 +45,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-cfg
+          volumeMounts: 
+            - mountPath: "/var/lib/postgresql/data"
+              name: postgres-data
+          securityContext:
+            runAsUser: 65534
+          
 ---
 apiVersion: v1
 kind: Service
