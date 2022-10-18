@@ -26,18 +26,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            echo 'this runs always'
-        }
-
-        success {
-            echo 'this runs on success'
-        }
-
-        failure {
-            echo 'this runs on failure'
-        }
-    }
 }
