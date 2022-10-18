@@ -10,8 +10,8 @@ pipeline {
             }
             steps {
                 echo 'building'
-                ls
-                pwd
+                ls ./
+                echo PWD
             }
         }
 
