@@ -3,8 +3,15 @@ pipeline {
 
     stages {
         stage("build") {
+            when {
+                expression {
+                    BRANCH_NAME == 'gke' || BRANCH_NAME == 'main'
+                }
+            }
             steps {
                 echo 'building'
+                ls
+                pwd
             }
         }
 
@@ -19,4 +26,19 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            echo 'this runs always'
+        }
+
+        success {
+            echo 'this runs on success'
+        }
+
+        failure {
+            echo 'this runs on failure'
+        }
+    }
 }
+
