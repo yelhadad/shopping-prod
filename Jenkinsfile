@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                echo 'building'
+                sh 'ls'
+                sh 'pwd'
             }
         }
 
