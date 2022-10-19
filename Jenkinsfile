@@ -3,15 +3,8 @@ pipeline {
 
     stages {
         stage("build") {
-            when {
-                expression {
-                    BRANCH_NAME == 'gke' || BRANCH_NAME == 'main'
-                }
-            }
             steps {
                 echo 'building'
-                ls ./
-                echo PWD
             }
         }
 
